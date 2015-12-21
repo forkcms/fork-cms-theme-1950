@@ -27,21 +27,21 @@ d5d5c2	Beige
 
 @font-face {
 	font-family: 'UltraRegular';
-	src: url('../fonts/ultra/Ultra-webfont.eot');
-	src: url('../fonts/ultra/Ultra-webfont.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/ultra/Ultra-webfont.woff') format('woff'),
-		url('../fonts/ultra/Ultra-webfont.ttf') format('truetype'),
-		url('../fonts/ultra/Ultra-webfont.svg#UltraRegular') format('svg');
+	src: url('../Fonts/ultra/Ultra-webfont.eot');
+	src: url('../Fonts/ultra/Ultra-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../Fonts/ultra/Ultra-webfont.woff') format('woff'),
+		url('../Fonts/ultra/Ultra-webfont.ttf') format('truetype'),
+		url('../Fonts/ultra/Ultra-webfont.svg#UltraRegular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'LeagueGothicRegular';
-	src: url('../fonts/league-gothic/League_Gothic-webfont.eot');
-	src: url('../fonts/league-gothic/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/league-gothic/League_Gothic-webfont.woff') format('woff'),
-		url('../fonts/league-gothic/League_Gothic-webfont.ttf') format('truetype'),
-		url('../fonts/league-gothic/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+	src: url('../Fonts/league-gothic/League_Gothic-webfont.eot');
+	src: url('../Fonts/league-gothic/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../Fonts/league-gothic/League_Gothic-webfont.woff') format('woff'),
+		url('../Fonts/league-gothic/League_Gothic-webfont.ttf') format('truetype'),
+		url('../Fonts/league-gothic/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -70,7 +70,7 @@ abbr{border: none;}
 body {
 	font: 87.5%/1.57143em Georgia, serif;
 	color: #444;
-	background: url(../images/bg.jpg);
+	background: url(../Images/bg.jpg);
 }
 
 
@@ -265,7 +265,7 @@ a:active {
 */
 
 #head {
-	background: url(../images/head-foot.png) no-repeat;
+	background: url(../Images/head-foot.png) no-repeat;
 	width: 980px;
 	padding-top: 80px;
 }
@@ -298,7 +298,7 @@ a:active {
 	
 	#head nav {
 		height: 61px;
-		background: url(../images/nav.png) no-repeat;
+		background: url(../Images/nav.png) no-repeat;
 		margin-left: -60px;
 		padding: 0 60px;
 		width: 980px;
@@ -342,7 +342,7 @@ a:active {
 					background-position: 50% 34px;
 				}
 					#head nav li.selected a {
-						background: url(../images/selected.png) no-repeat 50% 100%;
+						background: url(../Images/selected.png) no-repeat 50% 100%;
 					}
 					#head nav li.selected a:active {
 						background-position: 50% 34px;
@@ -355,17 +355,17 @@ a:active {
 				#head nav ul li:first-child a:visited {
 					width: 80px;
 					text-indent: -9999px;
-					background: url(../images/home.png) no-repeat 70px 7px;
+					background: url(../Images/home.png) no-repeat 70px 7px;
 				}
 				#head nav ul li:first-child a:active {
 					background-position: 70px 8px;
 				}
 				#head nav ul li:first-child.selected {
-					background: url(../images/selected.png) no-repeat 67px bottom;
+					background: url(../Images/selected.png) no-repeat 67px bottom;
 					height: 40px;
 				}
 				#head nav ul li:first-child.selected a {
-					background: url(../images/home.png) no-repeat 70px 7px;
+					background: url(../Images/home.png) no-repeat 70px 7px;
 				}
 				.ie6 #home a,
 				.ie6 #home a:visited,
@@ -382,7 +382,7 @@ a:active {
 		position: absolute;
 		left: 110px;
 		top: 50px;
-		background: url(../images/nav2.png) 0 100% no-repeat;
+		background: url(../Images/nav2.png) 0 100% no-repeat;
 		padding: 0 0 5px 20px;
 	}
 		#head nav li li,
@@ -443,7 +443,7 @@ a:active {
 		#search label {display: none;}
 		#search .inputText {
 			width: 220px;
-			background: #fff url(../images/search.png) no-repeat 97% 50%;
+			background: #fff url(../Images/search.png) no-repeat 97% 50%;
 		}
 			#searchIndex .inputText {
 				width: 90%;
@@ -581,7 +581,7 @@ a:active {
 			position: absolute;
 			width: 980px;
 			height: 240px;
-			background: url(../images/halftone.png);
+			background: url(../Images/halftone.png);
 			z-index: 2;
 		}
 	
@@ -602,12 +602,12 @@ a:active {
 			}
 			.home #blogRecentArticlesListWidget h3,
 			.home #blogRecentCommentsWidget h3 {
-				background: url(../images/news.png) no-repeat 0 4px;
+				background: url(../Images/news.png) no-repeat 0 4px;
 				margin-left: -24px;
 				padding-left: 24px;
 			}
 			.home #blogRecentCommentsWidget h3 {
-				background-image: url(../images/commentsGrey.png);
+				background-image: url(../Images/commentsGrey.png);
 			}
 	
 
@@ -663,7 +663,7 @@ a:active {
 			article header .meta {
 				height: 160px;
 				width: 50px;
-				background: url(../images/date-comments.png) no-repeat;
+				background: url(../Images/date-comments.png) no-repeat;
 				float: left;
 				margin: 0 -140px 0 0;
 				left: -140px;
@@ -701,7 +701,7 @@ a:active {
 						font-size: 18px;
 						text-align: center;
 						width: 18px;
-						background: url(../images/comments.png) no-repeat 50% 85%;
+						background: url(../Images/comments.png) no-repeat 50% 85%;
 						padding-bottom: 16px;
 						border-color: #CAC9D3;
 					}
@@ -713,7 +713,7 @@ a:active {
 			/* ARTICLE: Footer */
 			
 			article footer .meta li {
-				background: url(../images/tag-share.png) no-repeat 0 -19px;
+				background: url(../Images/tag-share.png) no-repeat 0 -19px;
 				text-transform: uppercase;
 				letter-spacing: 1px;
 				font-size: .85714em;
@@ -820,7 +820,7 @@ a:active {
 			.pageNavigation .previousLink,
 			.pageNavigation .nextLink {
 				height: 18px;
-				background: url(../images/arrows.png) no-repeat;
+				background: url(../Images/arrows.png) no-repeat;
 				float: left;
 			}
 			.pageNavigation .previousLink:hover {
@@ -879,7 +879,7 @@ a:active {
 				margin-bottom: 22px;
 			}
 		#widgets h3 {
-			background: url(../images/asidebg.png) no-repeat;
+			background: url(../Images/asidebg.png) no-repeat;
 			color: #fff;
 			width: 220px;
 			padding: 5px 45px 4px 78px ;
@@ -904,7 +904,7 @@ a:active {
 			#blogRecentCommentsWidget li {
 				padding-left: 22px;
 				margin-left: -22px;
-				background: url(../images/commentsGrey.png) no-repeat 0 7px;
+				background: url(../Images/commentsGrey.png) no-repeat 0 7px;
 			}
 				#blogRecentCommentsWidget li a:link:first-child {
 					font-weight: bold;
@@ -1055,7 +1055,7 @@ a:active {
 */
 
 #foot {
-	background: url(../images/head-foot.png) 0 -80px no-repeat;
+	background: url(../Images/head-foot.png) 0 -80px no-repeat;
 	height: 92px;
 	color: #837d7a;
 	letter-spacing: 4px;
@@ -1079,7 +1079,7 @@ a:active {
 	#foot .feed {
 		padding-left: 22px;
 		margin-left: -22px;
-		background: url(../images/feedicon.png) no-repeat;
+		background: url(../Images/feedicon.png) no-repeat;
 	}
 	.ie6 #foot .feed,
 	.ie7 #foot .feed {
@@ -1819,7 +1819,7 @@ label,
 		width: 8px;
 		border: 0;
 		text-indent: -9999px;
-		background: url(../images/close.png) no-repeat 4px 4px;
+		background: url(../Images/close.png) no-repeat 4px 4px;
 
 		opacity: .50;
 		filter: alpha(opacity=50);
