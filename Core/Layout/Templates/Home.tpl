@@ -1,4 +1,4 @@
-{include:core/layout/templates/head.tpl}
+{include:Core/Layout/Templates/Head.tpl}
 
 <body>
 <div id="wrap" class="home">
@@ -42,7 +42,7 @@
 	</section>
 </section>
 
-{include:core/layout/templates/footer.tpl}
+{include:Core/Layout/Templates/Footer.tpl}
 
 </div>
 {* General Javascript *}

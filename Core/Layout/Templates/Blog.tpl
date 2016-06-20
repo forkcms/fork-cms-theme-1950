@@ -1,4 +1,4 @@
-{include:core/layout/templates/head.tpl}
+{include:Core/Layout/Templates/Head.tpl}
 
 <body>
 <div id="wrap">
@@ -28,13 +28,13 @@
 	</section>	
 </section>
 
-{include:core/layout/templates/footer.tpl}
+{include:Core/Layout/Templates/Footer.tpl}
 
 </div>
 {* General Javascript *}
 {iteration:javascriptFiles}
 <script src="{$javascriptFiles.file}"></script>
 {/iteration:javascriptFiles}
-<script src="{$THEME_URL}/core/layout/js/scripts.js"></script>
+<script src="{$THEME_URL}/Core/Layout/Js/scripts.js"></script>
 </body>
 </html>

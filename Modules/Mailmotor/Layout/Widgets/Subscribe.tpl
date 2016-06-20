@@ -4,7 +4,7 @@
 	</header>
 	<div class="inner">
 		<div class="bd">
-			<form action="{$var|geturlforblock:'mailmotor':'subscribe'}" method="post">
+			<form action="{$var|geturlforblock:'Mailmotor':'Subscribe'}" method="post">
 				<input type="hidden" name="form" value="subscribe" />
 				<p>
 					<label for="email">{$lblEmail|ucfirst}<abbr title="{$lblRequiredField}">*</abbr></label>

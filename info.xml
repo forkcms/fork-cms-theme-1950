@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+	<name>1950</name>
+	<version>1.1.0</version>
+	<requirements>
+		<minimum_version>3.7.0</minimum_version>
+	</requirements>
+	<thumbnail></thumbnail>
+	<description>
+		<![CDATA[
+			The 1950 theme combines a typical fifties type treatment, colour palette and rugged textures with an open and modern look. It uses the latest, semantically rich web standards and degrades gracefully in browsers from the 1950’s.
+		]]>
+	</description>
+	<authors>
+		<author>
+			<name>Xavier Bertels</name>
+			<url>http://xavierbertels.com/</url>
+		</author>
+	</authors>
+	<metanavigation supported="false" />
+	<templates>
+		
+	</templates>
+</theme>
