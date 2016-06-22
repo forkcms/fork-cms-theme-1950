@@ -1,0 +1,147 @@
+{#
+  variables that are available:
+  - {{ item }}: contains data about the post
+  - {{ comments }}: contains an array with the comments for the post, each element contains data about the comment.
+  - {{ commentsCount }}: contains a variable with the number of comments for this blog post.
+  - {{ navigation }}: contains an array with data for previous and next post
+#}
+
+<div id="blogDetail">
+    <article class="mod">
+        <header>
+            <h2><a href="{{ item.full_url }}" title="{{ item.title }}">{{ item.title }}</a></h2>
+            <ul class="meta">
+                <li>
+                    <time datetime="{{ item.publish_on|date('c',LANGUAGE ) }}">
+                        <span class="day">{{ item.publish_on|date('d',LANGUAGE ) }}</span>
+                        <span class="month">{{ item.publish_on|date('m',LANGUAGE ) }}</span>
+                        <span class="year">{{ item.publish_on|date('Y',LANGUAGE ) }}</span>
+                    </time>
+                </li>
+                <li class="comments">
+                    {# Comments #}
+                    {% if not comments %}
+                        <a href="#{{ 'act.Comment'|trans }}" class="nocomments" title="{{ 'msg.BlogNoComments'|trans|capitalize }}">
+                        <span class="x">{{ 'msg.BlogNoComments'|trans|capitalize }}</span></a>
+                    {% endif %}
+                    {% if comments %}
+                        <a href="#{{ 'act.Comments'|trans }}" title="{{ 'msg.BlogComments'|trans|capitalize }}">{{ item.comments_count }}</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </header>
+        <div class="bd content">
+            {{ item.text|raw }}
+        </div>
+        <footer>
+            <ul class="shareButtons">
+                <li>
+                    <div class="g-plusone" data-size="medium" data-count="false"></div>
+                </li>
+                <li><a href="http://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a></li>
+                <li>
+                    <iframe src="https://www.facebook.com/plugins/like.php?href={{ SITE_URL }}{{ item.full_url }}&amp;layout=button_count&amp;show_faces=false&amp;font=Arial&amp;locale=en_US"
+                        scrolling="no" frameborder="0" style="border:none; width:50px; height:20px"></iframe>
+                </li>
+            </ul>
+            <ul class="pageNavigation">
+                {% if navigation.previous %}
+                    <li class="previousLink">
+                        <a href="{{ navigation.previous.url }}"
+                           rel="prev">{{ 'lbl.PreviousArticle'|trans|capitalize }}</a>
+                    </li>
+                {% endif %}
+                {% if navigation.next %}
+                    <li class="nextLink">
+                        <a href="{{ navigation.next.url }}" rel="next">{{ 'lbl.NextArticle'|trans|capitalize }}</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </footer>
+    </article>
+
+    {% if comments %}
+        <section id="blogComments" class="mod">
+            <div class="inner">
+                <header class="hd">
+                    <h3 id="{{ 'act.Comments'|trans }}">{{ 'lbl.Comments'|trans|capitalize }}</h3>
+                </header>
+                <div class=" bd content">
+                    {% for comment in comments %}
+                        {# Do not alter the id! It is used as an anchor #}
+                        <div id="comment-{{ comment.id }}" class="comment">
+                            <div class="imageHolder">
+                                {% if comment.website %}
+                                    <a href="{{ comment.website }}">
+                                        <img src="{{ THEME_URL }}/Core/Layout/Images/default_author_avatar.gif" width="48" height="48" alt="{{ comment.author }}" class="replaceWithGravatar" data-gravatar-id="{{ comment.gravatar_id }}"/>
+                                    </a>
+                                {% else %}
+                                    <img src="{{ THEME_URL }}/Core/Layout/Images/default_author_avatar.gif" width="48" height="48" alt="{{ comment.author }}" class="replaceWithGravatar" data-gravatar-id="{{ comment.gravatar_id }}"/>
+                                {% endif %}
+                            </div>
+                            <div class="commentContent">
+                                <p class="commentAuthor">
+                                    {% if comment.website %}
+                                        <a href="{{ comment.website }}">{{ comment.author }}</a>
+                                    {% else %}
+                                        {{ comment.author }}
+                                    {% endif %}
+                                    {{ 'lbl.Wrote'|trans }}
+                                    {{ comment.created_on|timeago|raw }}
+                                </p>
+                                <div class="commentText content">
+                                    {{ comment.text|cleanupplaintext|raw }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+    {% if item.allow_comments %}
+        <section id="blogCommentForm" class="mod">
+            <div class="inner">
+                <header class="hd">
+                    <h3 id="{{ 'act.Comment'|trans|capitalize }}">{{ 'msg.Comment'|trans|capitalize }}</h3>
+                </header>
+                <div class=" bd">
+                    {% if commentIsInModeration %}
+                        <div class="message warning"><p>{{ 'msg.BlogCommentInModeration'|trans }}</p></div>
+                    {% endif %}
+                    {% if commentIsSpam %}
+                        <div class="message error"><p>{{ 'msg.BlogCommentIsSpam'|trans }}</p></div>
+                    {% endif %}
+                    {% if commentIsAdded %}
+                        <div class="message success"><p>{{ 'msg.BlogCommentIsAdded'|trans }}</p></div>
+                    {% endif %}
+
+                    {% form commentsForm %}
+                        <div class="alignBlocks">
+                            <p {% if txtAuthorError %}class="errorArea"{% endif %}>
+                                <label for="author">{{ 'lbl.Name'|trans|capitalize }}<abbr title="{{ 'lbl.RequiredField'|trans }}">*</abbr></label>
+                                {% form_field_error author %} {% form_field author %}
+                            </p>
+                            <p {% if txtEmailError %}class="errorArea"{% endif %}>
+                                <label for="email">{{ 'lbl.Email'|trans|capitalize }}<abbr title="{{ 'lbl.RequiredField'|trans }}">*</abbr></label>
+                                {% form_field_error email %} {% form_field email %}
+                            </p>
+                        </div>
+                        <p class="bigInput{% if txtWebsiteError %} errorArea{% endif %}">
+                            <label for="website">{{ 'lbl.Website'|trans|capitalize }}</label>
+                            {% form_field_error website %} {% form_field website %}
+                        </p>
+                        <p class="bigInput{% if txtMessageError %} errorArea{% endif %}">
+                            <label for="message">{{ 'lbl.Message'|trans|capitalize }}<abbr title="{{ 'lbl.RequiredField'|trans }}">*</abbr></label>
+                            {% form_field_error message %} {% form_field message %}
+                        </p>
+                        <p>
+                            <input class="inputSubmit" type="submit" name="comment" value="{{ 'msg.Comment'|trans|capitalize }}"/>
+                        </p>
+                    {% endform %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+</div>

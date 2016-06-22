@@ -1,0 +1,74 @@
+{% include "Core/Layout/Templates/Head.html.twig" %}
+
+<body>
+	<div id="wrap">
+		<header id="head" role="banner">
+			<h1><a href="/" title="{{ siteTitle }}">{{ siteTitle }}</a></h1>
+			<p id="skip"><a href="#main">{{ 'lbl.SkipToContent'|trans|ucfirst }}</a></p>
+			<nav>
+				{{ getnavigation('page',0,1) }}
+			</nav>
+			{# Block 1 (default: Search) #}
+			{% for top in positions.top %}
+				{% if top.html %}
+					{{ top.html|raw }}
+				{% elseif top.include_path %}
+					{% include top.include_path %}
+				{% endif %}
+			{% endfor %}
+		</header>
+
+		<section id="content" class="cols">
+			{% if positions.advertisement %}
+				{% for advertisement in positions.advertisement %}
+					{% if advertisement.html %}
+						<div id="intropic">
+							{{ advertisement.html|raw}}
+						</div>
+					{% elseif advertisement.include_path %}
+					    {% include advertisement.include_path %}
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+
+			<section id="main" class="c4 before1">
+				{% for main in positions.main %}
+					{% if main.html %}
+						<article class="content">
+							<h1>{{ page.title }}</h1>
+							{{ main.html|raw }}
+						</article>
+					{% elseif main.include_path %}
+					    {% include main.include_path %}
+					{% endif %}
+				{% endfor %}
+			</section>
+
+			{# {% if position.widgets %} #}
+				<section id="widgets" class="c3">
+					{% for widget in positions.widgets %}
+						<div class="before1 c2">
+							{% if widget.html %}
+								{{ widget.html|raw }}
+							{% elseif widget.include_path %}
+								{% include widget.include_path %}
+							{% endif %}
+						</div>
+					{% endfor %}
+				</section>
+			{# {% endif %} #}
+
+		</section>
+
+		{% include "Core/Layout/Templates/Footer.html.twig" %}
+	</div>
+
+	{# General Javascript #}
+	{% for js in jsFiles %}
+	    <script src="{{ js.file }}"></script>
+	{% endfor %}
+
+	{# Theme specific Javascript #}
+	<script src="{{ THEME_URL }}/Core/Js/scripts.min.js"></script>
+</body>
+</html>

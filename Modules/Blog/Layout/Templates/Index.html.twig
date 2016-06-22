@@ -1,0 +1,67 @@
+{#
+  variables that are available:
+  - {{ items }}: contains an array with all posts, each element contains data about the post
+#}
+
+{% if not items %}
+	<div id="blogIndex">
+		<section class="mod">
+			<div class="inner">
+				<div class="bd content">
+					<p>{{ 'msg.BlogNoItems'|trans }}</p>
+				</div>
+			</div>
+		</section>
+	</div>
+{% endif %}
+
+{% if items %}
+	{% for item in items %}
+		<article class="mod">
+			<header>
+				<h2><a href="{{ item.full_url }}" title="{{ item.title }}">{{ item.title }}  <abbr title="View full blog post">&rarr;</abbr></a></h2>
+				<ul class="meta">
+					<li>
+						{# Date #}
+						<time datetime="{{ item.publish_on|date('c',LANGUAGE ) }}">
+							<span class="day">{{ item.publish_on|date('d',LANGUAGE ) }}</span>
+							<span class="month">{{ item.publish_on|date('m',LANGUAGE ) }}</span>
+							<span class="year">{{ item.publish_on|date('Y',LANGUAGE ) }}</span>
+						</time>
+					</li>
+					<li class="comments">
+						{# Comments #}
+						{% if not item.comments %}<a href="{{ item.full_url }}#{{ 'act.Comment'|trans }}" class="nocomments" title="{{ 'msg.BlogNoComments'|trans|capitalize }}"><span class="x">{{ 'msg.BlogNoComments'|trans|capitalize }}</span></a>{% endif %}
+						{% if item.comments %}<a href="{{ item.full_url }}#{{ 'act.Comments'|trans }}" title="{{ 'msg.BlogComments'|trans|capitalize }}">{{ item.comments_count }}</a>{% endif %}
+					</li>
+				</ul>
+			</header>
+			<div class="bd">
+				{% if not item.introduction %}{{ item.text|raw }}{% endif %}
+				{% if item.introduction %}{{ item.introduction|raw }}{% endif %}
+			</div>
+			<footer>
+				<ul class="meta">
+					{# Tags #}
+					{% if item.tags %}
+						<li class="tags">
+							{% for tag in item.tags %}
+								<a href="{{ tag.full_url }}" rel="tag" title="{{ tag.name }}">{{ tag.name }}</a>{% if not tag.last %}, {% endif %}{% if tag.last %}{% endif %}
+							{% endfor %}
+						</li>
+					{% endif %}
+					<li class="share"><a href="#">Share</a>
+						<ul class="shareButtons">
+							<li><div class="g-plusone" data-size="medium" data-count="false" href="{{ SITE_URL }}{{ item.full_url }}"></div></li>
+							<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-url="{{ SITE_URL }}{{ item.full_url }}">Tweet</a></li>
+							<li><iframe src="https://www.facebook.com/plugins/like.php?href={{ SITE_URL }}{{ item.full_url }}&amp;layout=button_count&amp;show_faces=false&amp;font=Arial&amp;locale=en_US" scrolling="no" frameborder="0" style="border:none; width:50px; height:20px"></iframe>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+			</footer>
+		</article>
+	{% endfor %}
+	{% include "Core/Layout/Templates/Pagination.html.twig" %}
+{% endif %}

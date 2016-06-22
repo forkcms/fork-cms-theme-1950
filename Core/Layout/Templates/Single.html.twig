@@ -1,0 +1,80 @@
+{% include "Core/Layout/Templates/Head.html.twig" %}
+
+<body>
+	<div id="wrap">
+		<header id="head" role="banner">
+			<h1><a href="/" title="{{ siteTitle }}">{{ siteTitle }}</a></h1>
+			<p id="skip"><a href="#main">{{ 'lbl.SkipToContent'|trans|ucfirst }}</a></p>
+			<nav>
+				{{ getnavigation('page',0,1) }}
+			</nav>
+			{# Block 1 (default: Search) #}
+			{% for top in positions.top %}
+				{% if top.html %}
+					{{ top.html|raw }}
+				{% elseif top.include_path %}
+					{% include top.include_path %}
+				{% endif %}
+			{% endfor %}
+		</header>
+
+		<section id="content" class="cols">
+			<h1>{{ pageTitle }}</h1>
+
+			{% if positions.wide %}
+				{% for wide in positions.wide %}
+					{% if wide.html %}
+						<section class="full">
+							{{ wide.html|raw}}
+						</section>
+					{% elseif wide.include_path %}
+					    {% include wide.include_path %}
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+
+			<section id="main" class="c4 before1">
+				{% for main in positions.main %}
+					{% if main.html %}
+						<article class="content">
+							{{ main|raw }}
+						</article>
+					{% elseif main.include_path %}
+					    {% include main.include_path %}
+					{% endif %}
+				{% endfor %}
+			</section>
+
+			{% if block6 %}
+				<aside class="page-aside c3">
+					{{ block6 }}
+				</aside>
+			{% endif %}
+			{% if block7 %}
+				<aside class="page-aside c3">
+					{{ block7 }}
+				</aside>
+			{% endif %}
+			<section id="widgets" class="c2 before1">
+				{% if block8 %}
+					{{ block8 }}
+				{% endif %}
+				{% if block9 %}
+					{{ block9 }}
+				{% endif %}
+				{% if block10 %}
+					{{ block10 }}
+				{% endif %}
+			</section>
+		</section>
+
+		{% include "Core/Layout/Templates/Footer.html.twig" %}
+	</div>
+
+	{# General Javascript #}
+	{% for script in javascriptFiles %}
+		<script src="{{ script.file }}"></script>
+	{% endfor %}
+	<script src="{{ THEME_URL }}/Core/Layout/Js/scripts.js" type="text/javascript"></script>
+</body>
+</html>

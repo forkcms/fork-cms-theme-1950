@@ -295,7 +295,7 @@ a:active {
 
 
 	/* NAVIGATION: Primary */
-	
+
 	#head nav {
 		height: 61px;
 		background: url(../Images/nav.png) no-repeat;
@@ -347,10 +347,10 @@ a:active {
 					#head nav li.selected a:active {
 						background-position: 50% 34px;
 					}
-				
-				
+
+
 				/* HOME BUTTON */
-				
+
 				#head nav ul li:first-child a,
 				#head nav ul li:first-child a:visited {
 					width: 80px;
@@ -421,9 +421,9 @@ a:active {
 						height: auto;
 					}
 
-		
+
 	/* SEARCH */
-	
+
 	#search {
 		position: relative;
 		float: right;
@@ -443,7 +443,7 @@ a:active {
 		#search label {display: none;}
 		#search .inputText {
 			width: 220px;
-			background: #fff url(../Images/search.png) no-repeat 97% 50%;
+			background: #fff url(../Images/search.png) no-repeat 97% 50% !important;
 		}
 			#searchIndex .inputText {
 				width: 90%;
@@ -475,31 +475,19 @@ a:active {
 
 
 		/* SEARCH AUTOCOMPLETE */
-		
-		.ui-autocomplete {
-			font: italic 14px/22px Georgia, serif;
-		}
-		.ui-corner-all {
-			-webkit-border-radius: 0;
-			-moz-border-radius: 0;
-			-o-border-radius: 0;
-			border-radius: 0;
-		}
-		.ui-widget a {
-			border-bottom: 1px solid #d5d5c2;
-		}
-			.ui-widget li:last-child a {
-				border: none;
-			}
-				.ui-menu .ui-menu-item a.ui-state-hover,
-				.ui-menu .ui-menu-item a.ui-state-active,
-				.ui-widget li:last-child a.ui-state-active {
-					background-color: #47418f;
-					border-color: 1px solid #6762A6;
-					text-shadow: none;
-					margin-top: 0;
-				}
 
+		.tt-suggestion {
+			font: italic 14px/1.2 Georgia, serif;
+			padding: 10px 10px 25px !important;
+		}
+
+		.tt-suggestion:hover,
+		.tt-suggestion.tt-cursor {
+			background-color: #47418f !important;
+			border-color: 1px solid #6762A6;
+			text-shadow: none;
+			margin-top: 0;
+		}
 
 /*
 	CONTENT
@@ -518,7 +506,7 @@ a:active {
 
 
 	/* HOMEPAGE */
-	
+
 	.home #main {
 		border-top: 1px solid #d5d5c2;
 		border-bottom: 1px solid #d5d5c2;
@@ -584,10 +572,10 @@ a:active {
 			background: url(../Images/halftone.png);
 			z-index: 2;
 		}
-	
+
 
 			/* HOMEPAGE: Widget-specific overrides */
-	
+
 			.home #blogRecentCommentsWidget a:first-child:link,
 			.home #blogRecentCommentsWidget a:first-child:visited {
 				font-style: normal;
@@ -609,7 +597,7 @@ a:active {
 			.home #blogRecentCommentsWidget h3 {
 				background-image: url(../Images/commentsGrey.png);
 			}
-	
+
 
 	/* MAIN */
 
@@ -619,7 +607,7 @@ a:active {
 
 
 		/* BLOGPOSTS */
-	
+
 		article {
 			padding: 22px 0 21px;
 			border-bottom: 1px solid #d5d5c2;
@@ -656,10 +644,10 @@ a:active {
 			.ie6 article img {
 				width: 100%;;
 			}
-			
-			
+
+
 			/* ARTICLE: Header */
-			
+
 			article header .meta {
 				height: 160px;
 				width: 50px;
@@ -708,10 +696,10 @@ a:active {
 					article header .meta .comments .nocomments {
 						padding-bottom: 30px;
 					}
-					
-			
+
+
 			/* ARTICLE: Footer */
-			
+
 			article footer .meta li {
 				background: url(../Images/tag-share.png) no-repeat 0 -19px;
 				text-transform: uppercase;
@@ -728,10 +716,10 @@ a:active {
 					color: #555;
 					border-color: #555;
 				}
-				
-				
+
+
 				/* ARTICLE: Footer: Share Buttons */
-				
+
 				article footer .meta .share {
 					font-weight: bold;
 					background-position: 0 4px;
@@ -807,10 +795,10 @@ a:active {
 							padding: 0;
 							opacity: 1;
 						}
-	
-	
-		/* PAGINATION & PAGE NAVIGATION */	
-	
+
+
+		/* PAGINATION & PAGE NAVIGATION */
+
 		.pageNavigation {
 			margin-top: 22px;
 			clear: both;
@@ -853,10 +841,10 @@ a:active {
 					padding-right: 26px;
 					text-align: right;
 				}
-	
+
 
 		/* WIDGETS */
-		
+
 		.ie7 #widgets {
 			float: right;
 		}
@@ -897,10 +885,10 @@ a:active {
 			color: #e65540;
 			border-color: #e65540;
 		}
-	
-	
+
+
 			/* WIDGET: Recent Comments */
-		
+
 			#blogRecentCommentsWidget li {
 				padding-left: 22px;
 				margin-left: -22px;
@@ -924,10 +912,10 @@ a:active {
 					letter-spacing: expression(this.previousSibling==null?'1px':'0');
 					border-bottom: 1px solid #837d7a;
 				}
-				
-			
+
+
 			/* WIDGET: Tag Cloud */
-			
+
 			#tagCloudWidget li {
 				display: inline;
 				border-right: 1px solid #d5d5c2;
@@ -948,7 +936,7 @@ a:active {
 
 
 			/* WIDGET: Recent Articles */
-		
+
 			#blogRecentArticlesListWidget li a {
 				font-size: 1.2307692308em;
 			}
@@ -1024,7 +1012,7 @@ a:active {
 
 
 		/* COLSYSTEM */
-	
+
 		.cols .c1, .cols .c2, .cols .c3, .cols .c4, .cols .c5, .cols .c6, .cols .c7, .cols .c8 {
 			margin: 0 10px;
 			float: left;
@@ -1044,7 +1032,7 @@ a:active {
 		.cols .before1 {margin-left:130px;}
 		.cols .before2 {margin-left:250px;}
 		.cols .before3 {margin-left:390px;}
-	
+
 		.cols section .before1 {margin-left: 120px;}
 		.cols .first {margin-left: 0;}
 		.cols .last {margin-right: 0;}
@@ -1370,7 +1358,7 @@ select {
 		font-weight: 700;
 		color: #999;
 	}
-	
+
 		.ie6 legend {
 			margin-bottom: 10px;
 		}
