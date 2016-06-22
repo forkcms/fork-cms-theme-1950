@@ -1,0 +1,19 @@
+{% if pagination %}
+	{% if pagination.multiple_pages %}
+		<nav class="mod">
+			<ul class="pageNavigation">
+				{% if pagination.show_previous %}
+					<li class="previousLink">
+						<a href="{{ pagination.previous_url }}" rel="prev nofollow" title="{{ 'lbl.PreviousPage'|trans|ucfirst }}">{{ 'lbl.PreviousPage'|trans|ucfirst }}</a>
+					</li>
+				{% endif %}
+
+				{% if pagination.show_next %}
+					<li class="nextLink">
+						<a href="{{ pagination.next_url }}" rel="next nofollow" title="{{ 'lbl.NextPage'|trans|ucfirst }}">{{ 'lbl.NextPage'|trans|ucfirst }}</a>
+					</li>
+				{% endif %}
+			</ul>
+		</nav>
+	{% endif %}
+{% endif %}

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <theme>
 	<name>1950</name>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 	<requirements>
-		<minimum_version>3.7.0</minimum_version>
+		<minimum_version>4.0.0</minimum_version>
 	</requirements>
-	<thumbnail></thumbnail>
+	<thumbnail>thumbnail.png</thumbnail>
 	<description>
 		<![CDATA[
 			The 1950 theme combines a typical fifties type treatment, colour palette and rugged textures with an open and modern look. It uses the latest, semantically rich web standards and degrades gracefully in browsers from the 1950’s.
@@ -19,6 +19,32 @@
 	</authors>
 	<metanavigation supported="false" />
 	<templates>
-		
+		<template label="Default" path="Core/Layout/Templates/Default.html.twig">
+			<positions>
+				<position name="top"/>
+				<position name="advertisement"/>
+				<position name="main"/>
+				<position name="widgets"/>
+			</positions>
+			<format>[/,/,top],[advertisement,advertisement,advertisement],[main,main,widgets]</format>
+		</template>
+		<template label="Home" path="Core/Layout/Templates/Home.html.twig">
+			<positions>
+				<position name="top"/>
+				<position name="advertisement"/>
+				<position name="main"/>
+				<position name="widgets"/>
+			</positions>
+			<format>[/,/,top],[advertisement,advertisement,advertisement],[main,main,widgets]</format>
+		</template>
+		<template label="Single" path="Core/Layout/Templates/Single.html.twig">
+			<positions>
+				<position name="top"/>
+				<position name="advertisement"/>
+				<position name="main"/>
+				<position name="widgets"/>
+			</positions>
+			<format>[/,/,top],[advertisement,advertisement,advertisement],[main,main,widgets]</format>
+		</template>
 	</templates>
 </theme>
