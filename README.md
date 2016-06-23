@@ -1,6 +1,5 @@
 # Theme: 1950
 
-## Preview
 <p align="center">
     <img src="http://i.imgur.com/tSKAFZm.png">
 </p>
