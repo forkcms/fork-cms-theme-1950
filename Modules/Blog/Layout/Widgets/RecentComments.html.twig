@@ -6,7 +6,7 @@
 {% if widgetBlogRecentComments %}
 	<section id="blogRecentCommentsWidget" class="mod">
 		<header class="hd">
-			<h3>{{ 'lbl.RecentComments'|trans|capitalize }}</h3>
+			<h3>{{ 'lbl.RecentComments'|trans|ucfirst }}</h3>
 		</header>
 		<ul>
 			{% for comment in widgetBlogRecentComments %}

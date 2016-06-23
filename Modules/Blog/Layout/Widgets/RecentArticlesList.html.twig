@@ -6,7 +6,7 @@
 {% if widgetBlogRecentArticlesList %}
     <section id="blogRecentArticlesListWidget" class="mod">
         <header class="hd">
-            <h3>{{ 'lbl.RecentArticles'|trans|capitalize }}</h3>
+            <h3>{{ 'lbl.RecentArticles'|trans|ucfirst }}</h3>
         </header>
         <ul>
             {% for ArticlesList in widgetBlogRecentArticlesList %}

@@ -31,8 +31,8 @@
 					</li>
 					<li class="comments">
 						{# Comments #}
-						{% if not item.comments %}<a href="{{ item.full_url }}#{{ 'act.Comment'|trans }}" class="nocomments" title="{{ 'msg.BlogNoComments'|trans|capitalize }}"><span class="x">{{ 'msg.BlogNoComments'|trans|capitalize }}</span></a>{% endif %}
-						{% if item.comments %}<a href="{{ item.full_url }}#{{ 'act.Comments'|trans }}" title="{{ 'msg.BlogComments'|trans|capitalize }}">{{ item.comments_count }}</a>{% endif %}
+						{% if not item.comments %}<a href="{{ item.full_url }}#{{ 'act.Comment'|trans }}" class="nocomments" title="{{ 'msg.BlogNoComments'|trans|ucfirst }}"><span class="x">{{ 'msg.BlogNoComments'|trans|ucfirst }}</span></a>{% endif %}
+						{% if item.comments %}<a href="{{ item.full_url }}#{{ 'act.Comments'|trans }}" title="{{ 'msg.BlogComments'|trans|ucfirst }}">{{ item.comments_count }}</a>{% endif %}
 					</li>
 				</ul>
 			</header>
