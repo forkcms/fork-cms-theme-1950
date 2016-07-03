@@ -1,7 +1,7 @@
 <footer id="foot" class="cols">
 	<ul class="c3 before1">
 		<li><a class="feed" href="{{ geturlforblock('Blog', 'Rss') }}">{{ 'lbl.SubscribeToTheRSSFeed'|trans|ucfirst }}</a></li>
-		<li class="copyright">Copyright &copy; {{ now|date('Y') }} {{ siteTitle }}</li>
+		<li class="copyright">Copyright &copy; {{ now|date('Y') }} {{ siteTitle|raw }}</li>
 	</ul>
 	<ul id="footBranding" class="c2 before2">
 		<li><a href="http://fork-cms.be">Fork CMS</a></li>

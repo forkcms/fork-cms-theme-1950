@@ -3,7 +3,7 @@
 <body>
 	<div id="wrap" class="home">
 		<header id="head" role="banner">
-			<h1><a href="/" title="{{ siteTitle }}">{{ siteTitle }}</a></h1>
+			<h1><a href="/" title="{{ siteTitle|raw }}">{{ siteTitle|raw }}</a></h1>
 			<p id="skip"><a href="#main">{{ 'lbl.SkipToContent'|trans|ucfirst }}</a></p>
 			<nav>
 				{{ getnavigation('page',0,2) }}
